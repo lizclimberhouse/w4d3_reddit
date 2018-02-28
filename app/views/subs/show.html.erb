@@ -1,4 +1,4 @@
-<h1><%= @sub.name %></h1>
+<h1>Sub: <%= @sub.name %></h1>
 <hr>
 <p>What would you like to do?</p>
 <%= link_to 'View topics', sub_topics_path(@sub) %>
@@ -6,3 +6,5 @@
 <%= link_to 'Edit Sub', edit_sub_path(@sub) %>
 <br>
 <%= link_to 'Delete Sub', @sub, method: :delete %>
+<br>
+<%= link_to 'Back to Home Page', root_path %>
