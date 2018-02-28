@@ -1,0 +1,12 @@
+<h1><%= @sub.name %> - <%= @topic.name %></h1>
+<p><%= @topic.body %></p>
+<%= link_to 'Add Commment', new_topic_comment_path(@topic) %>
+
+<% @topic.comments.each do |c| %>
+  <%= render 'comments/comment', { comment_var: c } %>
+<% end %>
+
+<hr>
+<%= link_to 'Edit Topic', edit_sub_topic_path(@sub, @topic) %>
+<%= link_to 'Delete Topic', [@sub, @topic], method: :delete%>
+<%= link_to 'Back to Topics', sub_topics_path(@sub) %>
